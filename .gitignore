@@ -1,0 +1,14 @@
+# ESP-IDF build output and generated config
+build/
+sdkconfig
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Generated voice clips (regenerate with ver_3/tools/make_clips.py; voice dataset licence restricts redistribution)
+ver_3/main/clips/*.pcm
+
+# Tooling
+__pycache__/
+*.pyc
+.cache/

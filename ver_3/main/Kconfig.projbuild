@@ -1,0 +1,65 @@
+menu "Speaker Test Configuration"
+
+    choice AUDIO_OUTPUT_MODE_CHOICE
+        prompt "Audio Output Mode"
+        default AUDIO_MODE_EXTERNAL_I2S_CONFIG
+        help
+            Select whether to use the internal PDM 1-bit DAC on a single GPIO (no external DAC needed)
+            or standard 3-wire I2S for external DAC modules (MAX98357A, PCM5102).
+
+        config AUDIO_MODE_PDM_DAC_CONFIG
+            bool "DAC-Free PDM 1-Bit TX Mode (Direct to speaker via GPIO 18)"
+
+        config AUDIO_MODE_EXTERNAL_I2S_CONFIG
+            bool "Standard I2S TX Mode (External MAX98357A / PCM5102 DAC)"
+    endchoice
+
+    config SPEAKER_PDM_GPIO
+        int "PDM Audio Pin (Speaker + terminal)"
+        depends on AUDIO_MODE_PDM_DAC_CONFIG
+        default 18
+        range 0 48
+        help
+            GPIO pin for PDM 1-bit output directly to speaker (via 100-220 ohm resistor / capacitor).
+            Default: 18.
+
+    config I2S_EXT_BCLK_GPIO
+        int "Standard I2S Bit Clock (BCLK) GPIO"
+        depends on AUDIO_MODE_EXTERNAL_I2S_CONFIG
+        default 5
+        range 0 48
+        help
+            GPIO pin for I2S BCLK. Avoid GPIO 19/20 (native USB D-/D+).
+
+    config I2S_EXT_LRCK_GPIO
+        int "Standard I2S Word Select (LRCK/WS) GPIO"
+        depends on AUDIO_MODE_EXTERNAL_I2S_CONFIG
+        default 6
+        range 0 48
+        help
+            GPIO pin for I2S LRCK / WS.
+
+    config I2S_EXT_DOUT_GPIO
+        int "Standard I2S Data Out (DIN/DOUT) GPIO"
+        depends on AUDIO_MODE_EXTERNAL_I2S_CONFIG
+        default 4
+        range 0 48
+        help
+            GPIO pin for I2S Data Out.
+
+    config SPEAKER_SAMPLE_RATE
+        int "Audio Sample Rate (Hz)"
+        default 16000
+        range 8000 48000
+        help
+            Sample rate for audio generation and DMA streaming (default 16000 Hz).
+
+    config SPEAKER_DEFAULT_VOLUME_PERCENT
+        int "Default Boot Volume (0 - 100%)"
+        default 70
+        range 0 100
+        help
+            Initial digital software volume level percentage.
+
+endmenu
+

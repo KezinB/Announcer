@@ -1,0 +1,7 @@
+# name|text   (name must match the CLIP_ list in main/clips.c)
+boot|Text to speech system online.
+p1|Warning bell. Morning assembly starts in five minutes.
+p2|Period one has commenced. Faculty please proceed to classrooms.
+p3|Lunch interval has begun.
+p4|Attention all personnel. Fire evacuation drill in progress.
+p5|Campus bell text to speech system online.
