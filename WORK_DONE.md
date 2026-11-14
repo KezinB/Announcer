@@ -99,3 +99,4 @@
 | Resume step 2 | Word-level clip vocabulary (numbers, times) with SAM fallback |
 | Resume step 3 | Non-blocking shared `auravoice` component for S3 projects |
 | Off-Drive files | `Downloads/Announcer_tools` (Piper + voice), `Downloads/Announcer_v1..v3` (build mirrors) |
+| Repository | https://github.com/KezinB/Announcer (public); voice clips excluded via `.gitignore` |

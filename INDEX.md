@@ -7,6 +7,7 @@
 | **Status** | `[PARKED]` Explored: ver_1 PDM, ver_2 I2S amp, ver_3 natural voice verified |
 | **Track** | Utility / Product |
 | **Target** | ESP32-S3, ESP-IDF v6.0.2 |
+| **Repository** | https://github.com/KezinB/Announcer (public) |
 | **Last Updated** | 13 November 2026 |
 
 ---
