@@ -68,12 +68,25 @@ flowchart LR
 
 ---
 
+## 1B. ver_3: Natural Voice Clips
+
+| Item | Value |
+| :--- | :--- |
+| Hardware | Same as ver_2 (MAX98357A) |
+| Natural voice | Boot phrase and presets `/1`..`/5` (Piper `en_US-lessac-medium`) |
+| Robot voice | Typed text (SAM fallback) |
+| Phrase list | `ver_3/tools/phrases.txt` |
+| Generate clips | `ver_3/tools/make_clips.py` (see Section 5) |
+| Partition | `ver_3/partitions.csv`, 6 MB app |
+
+---
+
 ## 2. Console Commands
 
 | Input | Action |
 | :--- | :--- |
 | Any text + Enter | Speak it |
-| `/1` .. `/5` | Chime + preset announcement |
+| `/1` .. `/5` | Chime + preset announcement (natural clip in ver_3, SAM in ver_1/ver_2) |
 | `/v` | Next voice (Classic SAM, Natural Male, Natural Female, Campus PA, Robot) |
 | `/c` | Chime (C5, E5, G5) |
 | `/+` `/-` | Volume +/- 10% |

@@ -65,11 +65,13 @@ flowchart TD
 
 | Version | Scope | Status |
 | :--- | :--- | :---: |
-| v1.0 | SAM speaks typed text reliably on bench (see `PROJECT_SPEC.md`) | `[ACTIVE]` |
-| v1.x | Tuned voices, extended pronunciation lexicon, regression word list | `[PENDING]` |
-| v2.0 | MAX98357A I2S amplifier output in `ver_2/` (GPIO 4/5/6), no RC filter | `[ACTIVE]` |
-| v2.x | Announcer appliance: `announce.c`, DS3231 RTC or SNTP, schedule table, manual override | `[PENDING]` |
-| v2.y | Packaged as reusable ESP-IDF component for other projects (AquaNix alerts, BinaryClock) | `[PENDING]` |
+| v1.0 | SAM speaks typed text on bench, PDM output (`ver_1/`) | `[DONE]` |
+| v1.x | Tuned voices, extended pronunciation lexicon, regression word list | `[PARKED]` |
+| v2.0 | MAX98357A I2S amplifier output in `ver_2/` (GPIO 4/5/6), no RC filter | `[DONE]` |
+| v2.1 | Natural Piper voice clips in `ver_3/`, SAM fallback | `[DONE]` |
+| v2.2 | Final voice choice + word-level clip vocabulary (numbers, times) | `[PARKED]` |
+| v2.x | Scheduled announcer appliance: `announce.c`, DS3231 RTC or SNTP, schedule table, manual override | `[PARKED]` |
+| v2.y | Reusable non-blocking ESP-IDF component for ESP32-S3 projects | `[PARKED]` |
 | v3.0 | Custom Klatt formant engine as drop-in backend (`ver_1/docs/AURAVOICE_ENGINE.md`) | `[PARKED]` |
 | v3.x | Enclosure, PCB | `[PARKED]` |
 
